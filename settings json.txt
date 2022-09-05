@@ -1,0 +1,23 @@
+{
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "explorer.confirmDelete": false,
+    "editor.wordWrap": "on",
+    "diffEditor.wordWrap": "on",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontWeight": "normal",
+    "editor.fontFamily": "Source Code Pro",
+    "beautify.ignore": ["**/*.js","**/*.jsx"],
+    "prettier.jsxBracketSameLine": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Monokai",
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.fontWeightBold": null,
+    "react-native-tools.showUserTips": false,
+    "json.maxItemsComputed": 8000
+   
+}
