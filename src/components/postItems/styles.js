@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { colors } from '../../modal/color'
 
 const styles = StyleSheet.create({
     SafeAreaViewForDroid: {
@@ -12,11 +13,11 @@ const styles = StyleSheet.create({
     postWrap: {
       display: 'flex', 
       flexDirection: 'row', 
-      backgroundColor: 'white',
+      backgroundColor: colors.white,
       marginVertical:10,
       marginHorizontal:10,
       borderRadius: 10,
-      shadowColor: "#0000",
+      shadowColor: colors.black,
       shadowOffset:{width:0, height:1},
       shadowOpacity:0.8,
       shadowRadius:2,
@@ -35,8 +36,8 @@ const styles = StyleSheet.create({
       paddingVertical:10
     },
     postValue: {
-      color:"#fec85c", 
-      backgroundColor: '#293241', 
+      color:colors.primary, 
+      backgroundColor: colors.secondary, 
       alignSelf: 'flex-start',
       padding: 5,
       borderRadius: 10
