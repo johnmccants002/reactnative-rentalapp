@@ -1,25 +1,58 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, SafeAreaView, Platform } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  Image, 
+  SafeAreaView, 
+  Platform, 
+  TextInput } from 'react-native';
+import PostItems from './src/components/postItems';
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons'; 
+
 
 export default function App() {
   return (
     <SafeAreaView styles={styles.SafeAreaViewForDroid}>
-    <View style={styles.container}>
-      <StatusBar style="auto" backgroundColor="#fec85c" />
-      <View style={styles.postWrap}>
-      <Image 
-        source={{uri: "https://picsum.photos/200/300"}}
-        style={styles.postImage}
-      ></Image>
-      <View style={styles.postContentWrap}>
-        <View>
-          <Text style={{fontWeight: 'bold'}}>This is title for rent</Text>
-          <Text style={{color: 'grey'}}>New York</Text>
+      <View style={{
+        padding:10, 
+        backgroundColor:"#fec85c", 
+        flexDirection: "column", 
+        justifyContent: "center", 
+        alignItems: "center",
+        borderBottomLeftRadius:20, 
+        borderBottomRightRadius:20}}>
+        <View style={{
+            marginTop:30,
+            backgroundColor: "white",
+            flexDirection: "row",
+            padding: 10,
+            borderRadius: 5
+            }}>
+        <Ionicons name="ios-search" size={24} color="black" />
+        <TextInput 
+        placeholder="Search in Rent.com" 
+        style={{ width: "100%", marginLeft: 5 }}
+        multiline={false}
+        />
         </View>
-          <Text style={styles.postValue}>$100 / Day</Text>
-        </View>
+        <View style={{flexDirection: "row", justifyContent: "space-between", width: "100%", marginTop:10, paddingVertical:10}}>
+        <View style={{flexDirection: "row"}}>
+        <MaterialIcons name="location-pin" size={24} color="black" />
+        <Text style={{marginLeft: 5}}>Location</Text>
+        <Text style={{fontWeight: "bold", marginLeft: 5}}>New York</Text>
+        
       </View>
-    </View>
+      <View style={{flexDirection: "row"}}>
+      <MaterialIcons name="category" size={24} color="black" />
+      <Text style={{marginLeft: 5}}>Category</Text>
+        <Text style={{fontWeight: "bold", marginLeft: 5}}>Vehicle</Text>
+      </View>
+      </View>
+      
+      </View>
+        <PostItems/>
     </SafeAreaView>
   );
 }
@@ -27,42 +60,7 @@ export default function App() {
 const styles = StyleSheet.create({
   SafeAreaViewForDroid: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 200:0
-  },
-  container: {
-
-    backgroundColor: '#fec85c40',
-  },
-  postWrap: {
-    display: 'flex', 
-    flexDirection: 'row', 
-    backgroundColor: 'white',
-    marginVertical:10,
-    marginHorizontal:10,
-    borderRadius: 10,
-    shadowColor: "#0000",
-    shadowOffset:{width:0, height:1},
-    shadowOpacity:0.8,
-    shadowRadius:2,
-    elevation: 5,
-  },
-  postImage: {
-    height: 100, 
-    width: 100, 
-    borderRadius: 30, 
-    marginLeft: 10, 
-    marginRight: 20, 
-    marginVertical: 10
-  },
-  postContentWrap: {
-    justifyContent:"space-around", 
-    paddingVertical:10
-  },
-  postValue: {
-    color:"#fec85c", 
-    backgroundColor: '#293241', 
-    alignSelf: 'flex-start',
-    padding: 5,
-    borderRadius: 10
+    paddingTop: Platform.OS === 'android' ? 25:0,
+    backgroundColor: "#fec85c60"
   }
 });
