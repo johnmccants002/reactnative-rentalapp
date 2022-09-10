@@ -1,21 +1,23 @@
-
+import { StatusBar } from 'expo-status-bar';
+import { SafeAreaView } from "react-native";
 import { 
   StyleSheet, 
-  SafeAreaView, 
   Platform, 
 } from 'react-native';
-import PostItems from './src/components/postItems';
+import Route from './src/navigation/Router'
 import {colors} from './src/modal/color'
-import HeaderMobile from './src/components/headerForMobile/index'
+import 'react-native-gesture-handler'; 
+
 
 
 
 export default function App() {
   return (
-    <SafeAreaView styles={styles.SafeAreaViewForDroid}>
-        <HeaderMobile />
-        <PostItems/>
+    <SafeAreaView style={styles.SafeAreaViewForDroid}>
+        <StatusBar barStyle="dark-content" backgroundColor={colors.secondary} />
+        <Route />
     </SafeAreaView>
+    
   );
 }
 
